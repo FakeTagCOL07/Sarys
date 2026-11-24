@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B1030">
+  <meta name="color-scheme" content="dark">
+  <title>For you ♥</title>
+
+  <!-- Tipografías: serif/script romántica para encabezados + sans limpia para lectura -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bayou-night">
+
+  <!-- ===================== ESCENARIO: NOCHE DE BAYOU (capas de profundidad) ===================== -->
+  <div class="bayou-stage" aria-hidden="true">
+    <div class="layer layer-sky"></div>
+    <div class="layer layer-evangeline">
+      <div class="evangeline-star" id="evangelineStar"><i class="star-core"></i><i class="star-ray r1"></i><i class="star-ray r2"></i><i class="star-ray r3"></i><i class="star-ray r4"></i></div>
+    </div>
+    <div class="layer layer-mist mist-back"></div>
+    <div class="layer layer-silhouettes">
+      <svg class="cypress cypress-left" viewBox="0 0 200 400" preserveAspectRatio="xMinYMax slice" focusable="false"><path d="M0 400V120c14-40 26-70 40-110 8 36 18 62 24 90 12-26 20-52 30-80 6 30 12 50 20 74 10-20 20-34 34-50-2 40-6 74-4 106 4 86 6 150 6 250z"/></svg>
+      <svg class="cypress cypress-right" viewBox="0 0 200 400" preserveAspectRatio="xMaxYMax slice" focusable="false"><path d="M200 400V150c-12-30-22-60-34-96-8 30-16 52-22 78-12-24-22-46-30-70-4 26-10 44-18 66-10-14-20-24-34-36 2 34 6 62 4 90-4 80-6 130-6 218z"/></svg>
+    </div>
+    <div class="layer layer-mist mist-front"></div>
+    <div class="layer layer-water"></div>
+    <canvas id="bayou-canvas" class="fireflies-canvas"></canvas>
+  </div>
+
+  <main class="app" id="app">
+
+  <!-- ===================== HOME ===================== -->
+  <div id="home" class="view active">
+    <header class="home-header">
+      <h1 class="title">For you</h1>
+      <p class="subtitle">Algo simple, pero con amor ♥</p>
+    </header>
+
+    <nav class="grid" aria-label="Menú principal">
+      <button type="button" class="card" data-view="see-you" onclick="openView('see-you')">How I see you</button>
+      <button type="button" class="card" data-view="stayed" onclick="openView('stayed')">What stayed</button>
+      <button type="button" class="card" data-view="notes" onclick="openView('notes')">Notes</button>
+      <button type="button" class="card" data-view="ps-inicio" onclick="openView('ps-inicio')">...</button>
+    </nav>
+  </div>
+
+  <!-- ===================== HOW I SEE YOU ===================== -->
+  <div id="see-you" class="view">
+
+    <button type="button" class="back-btn" onclick="goHome()">← Atrás</button>
+
+    <p class="french-text touch-text" role="button" tabindex="0">· · Accro à vous · ·</p>
+
+    <!-- CAPA 2: CORAZONES (DETRÁS) -->
+    <div class="hearts-frame" aria-hidden="true">
+      <svg class="heart h4" viewBox="0 0 32 29" aria-hidden="true" focusable="false">
+        <path d="M23.6,0c-3.4,0-6.4,2.1-7.6,5.1C14.8,2.1,11.8,0,8.4,0
+        C3.8,0,0,3.8,0,8.4c0,9.3,16,20.6,16,20.6s16-11.3,16-20.6
+        C32,3.8,28.2,0,23.6,0z"/>
+      </svg>
+    </div>
+
+    <!-- CAPA 1: recuadro (adelante) -->
+    <article class="essay glass-card">
+
+      <h1 class="essay-title fade">♥ Por qué eres tú ♥</h1>
+
+      <p class="fade delay1">
+      Escribo esto porque te mereces saber lo que pienso de todo esto,
+      desde ese primer día, desde esa despedida,
+      dejaste de ser alguien más.
+      </p>
+
+      <p class="fade delay2">
+      Fueron tres días seguidos viéndonos, y bastaron.
+      Me hablaste con una confianza que no se regala,
+      y algo en mí cambió la forma en la que te miraba.
+      </p>
+
+      <p class="fade delay3">
+      Contigo apareció algo que no sentía hace años:
+      paz.
+      Una calma extraña que no apaga el deseo,
+      sino que lo vuelve más real.
+      </p>
+
+      <p class="fade delay4">
+      Me generas nervios, sí.
+      Ganas de verte, de tocarte, de sentirte cerca.
+      No es obsesión, no es dependencia,
+      es esa necesidad bonita de querer estar.
+      </p>
+
+      <p class="fade delay5">
+      Dices que somos diferentes,
+      pero en persona todo fluye distinto.
+      Lo simple contigo se vuelve enorme:
+      una mirada,
+      un roce,
+      un segundo de más.
+      </p>
+
+      <p class="fade delay6">
+      Sé que no estamos listos.
+      Lo tengo claro.
+      Pero no quiero improvisar,
+      quiero construir.
+      Guiarnos sin forzarnos,
+      crecer sin perdernos.
+      </p>
+
+      <p class="fade delay7">
+      No sentía nada por nadie desde hace tres años,
+      y contigo algo despertó sin pedir permiso.
+      No quiero una relación vacía,
+      quiero algo sano,
+      fiel,
+      real.
+      </p>
+
+      <p class="fade delay8">
+      Estoy dispuesto a dar amor sincero,
+      tiempo,
+      presencia.
+      Ser un lugar seguro,
+      no una promesa vacía.
+      </p>
+
+      <h2 class="essay-subtitle fade delay9">Tu físico</h2>
+
+      <p class="fade delay10">
+      Me atraes.
+      Y no voy a disfrazarlo.
+      El deseo existe,
+      pero nace de algo más profundo.
+      Quiero abrazarte,
+      escucharte respirar,
+      besarte sin prisa.
+      </p>
+
+      <p class="fade delay11">
+      Tu mirada no es solo bonita,
+      es peligrosa.
+      Esos ojos color miel,
+      esa forma de mirarme
+      como si el mundo se apagara alrededor.
+      </p>
+
+      <p class="fade delay12">
+      Tu sonrisa me calma.
+      Verte feliz me desarma,
+      me tranquiliza,
+      me llena.
+      </p>
+
+      <p class="fade delay13">
+      Tus labios…
+      mejor no decir demasiado.
+      Solo sé que desde la última vez,
+      hay un vacío que solo ellos saben llenar.
+      </p>
+
+      <p class="fade delay14">
+      Tu cuello provoca.
+      No porque quiera,
+      sino porque nace.
+      Quiero que cada beso ahí
+      te recuerde que te pienso.
+      </p>
+
+      <p class="fade delay15">
+      Tu cintura me enciende,
+      pero también me da paz.
+      Tenerte cerca,
+      atraerte hacia mí,
+      sentirte sin miedo.
+      </p>
+
+      <p class="fade delay16">
+      Tus abrazos no se le dan a cualquiera.
+      Y mis brazos están ahí
+      para sostenerte cuando lo necesites.
+      </p>
+
+      <p class="fade delay17">
+      Tus manos iniciaron todo.
+      Un contacto mínimo
+      que se volvió conexión.
+      </p>
+
+      <p class="fade delay18">
+      Tus piernas,
+      tus lunares,
+      cada parte de ti
+      me provoca conocerte sin prisa.
+      </p>
+
+      <p class="fade delay19 closing">
+      No sé qué me hiciste desde el primer día.
+      Solo sé que fue real.
+      Y por eso,
+      eres tú.
+      </p>
+
+    </article>
+  </div>
+
+
+  <!-- ===================== NOTES ===================== -->
+  <div id="notes" class="view">
+
+    <button type="button" class="back-btn" onclick="goHome()">← Atrás</button>
+
+    <div class="notes-container">
+
+      <!-- CARTA -->
+      <div class="letter-area">
+        <div class="counter" id="currentCount">0</div>
+
+        <div class="envelope" id="envelope">
+
+          <!-- CONTENEDOR CERRADO (cuerpo + hoja) -->
+          <div class="envelope-mask">
+
+            <!-- SVG FONDO -->
+            <svg class="envelope-svg back" viewBox="0 0 340 230" aria-hidden="true" focusable="false">
+              <rect x="0" y="60" width="340" height="170" rx="22" fill="#f6efe6"/>
+            </svg>
+
+            <!-- HOJA -->
+            <div class="paper">
+              <button type="button" class="paper-close" aria-label="Cerrar carta">✕</button>
+
+              <!-- Pantalla de inicio -->
+              <div class="paper-start" id="paperStart">
+                <h2 class="paper-title">💞 100 razones para amarte ✨</h2>
+                <button type="button" class="start-btn" id="startBtn">Comenzar ❤</button>
+              </div>
+
+              <!-- Contenido de las razones (oculto al inicio) -->
+              <div class="paper-content" id="paperContent">
+                <p class="paper-reason" id="paper-text">Cargando...</p>
+                <div class="reason-counter-top">
+                  <span id="currentReason">1</span> / 100
+                </div>
+              </div>
+
+              <!-- Botones de navegación -->
+              <button type="button" class="nav-btn nav-prev" id="prevBtn" aria-label="Razón anterior">←</button>
+              <button type="button" class="nav-btn nav-next" id="nextReasonBtn" aria-label="Siguiente razón">→</button>
+              <!-- Botón home (casita) -->
+              <button type="button" class="home-btn" id="homeBtn" aria-label="Volver al inicio de la carta">🏠</button>
+            </div>
+
+            <!-- SVG FRENTE -->
+            <svg class="envelope-svg front" viewBox="0 0 340 230" aria-hidden="true" focusable="false">
+              <polygon
+                points="0,60 170,140 340,60 340,230 0,230"
+                fill="#eadfcf"
+              />
+            </svg>
+
+          </div>
+
+          <!-- SOLAPA (FUERA DEL MASK) -->
+          <svg class="envelope-svg flap-layer" viewBox="0 0 340 230" aria-label="Abrir sobre" role="button" focusable="false">
+            <polygon
+              class="flap"
+              points="0,60 170,145 340,60"
+              fill="#e3d6c2"
+            />
+          </svg>
+
+          <div class="envelope-heart" aria-hidden="true">💜</div>
+        </div>
+      </div>
+
+      <!-- PIZARRA DE HISTORIAL -->
+      <section class="chalkboard" aria-label="Historial de razones">
+        <div class="chalkboard-frame">
+          <div class="chalkboard-content">
+            <h2 class="chalkboard-title"> 100 razones para amarte </h2>
+            <div class="chalkboard-grid" id="chalkboardGrid">
+              <!-- Las razones se agregarán aquí dinámicamente -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div> <!-- notes-container -->
+  </div> <!-- notes -->
+
+
+  <!-- ======================= P.S. : GLOBOS (FUERA DE LAS VISTAS) ======================= -->
+  <div class="balloons" id="ps-balloons" aria-hidden="true">
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+  </div>
+
+  <!-- ======================= P.S. (INICIO CON REGALO) ======================= -->
+  <div id="ps-inicio" class="view">
+    <div class="gift-container">
+      <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Abrir el regalo">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-ribbon-h"></div>
+        <div class="gift-bow"></div>
+      </div>
+      <p class="gift-text">Toca el regalo ✨</p>
+    </div>
+  </div>
+
+  <!-- ======================= P.S. (HOME DESPUÉS DE ABRIR) ======================= -->
+  <div id="ps-home" class="view">
+    <button type="button" class="back-btn" onclick="goHome()">← Atrás</button>
+    <h1 class="ps-title">❤️</h1>
+    <div class="ps-menu">
+      <button type="button" class="ps-btn" onclick="openView('ps-momentos')">💜Sarys💚</button>
+      <button type="button" class="ps-btn" onclick="openView('ps-mensaje')">Para tí 💌</button>
+    </div>
+  </div>
+
+  <!-- ======================= MOMENTOS (FOTOS) ======================= -->
+  <div id="ps-momentos" class="view">
+    <button type="button" class="back-btn" onclick="goBackToPS()">← Atrás</button>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <button type="button" class="carousel-btn prev" onclick="prevPhoto()" aria-label="Foto anterior">‹</button>
+
+        <figure class="photo-wrapper">
+          <div class="photo-frame">
+            <img id="currentPhoto" src="https://via.placeholder.com/400x500/FF69B4/FFFFFF?text=Foto" alt="Foto" decoding="async">
+          </div>
+          <figcaption id="photoCaption" class="photo-caption">Cargando...</figcaption>
+        </figure>
+
+        <button type="button" class="carousel-btn next" onclick="nextPhoto()" aria-label="Foto siguiente">›</button>
+      </div>
+
+      <div class="photo-dots" id="photoDots"></div>
+    </div>
+  </div>
+
+  <!-- ======================= MENSAJE (LA JOYA) ======================= -->
+  <div id="ps-mensaje" class="view">
+    <button type="button" class="back-btn" onclick="goBackToPS()">← Atrás</button>
+
+    <div class="message-container">
+      <div class="message-box glass-card">
+        <h2 class="message-title">Para tí</h2>
+        <div id="typedMessage" class="typed-text"></div>
+        <span class="cursor" aria-hidden="true">|</span>
+      </div>
+
+      <button type="button" class="eyes-btn" onclick="openPsSecretModal()" aria-haspopup="dialog" aria-controls="ps-secret-modal" aria-label="Abrir sorpresa">👀</button>
+    </div>
+  </div>
+
+  <!-- ======================= MODAL SECRETO DE P.S. ======================= -->
+  <div id="ps-secret-modal" class="ps-secret-modal" role="dialog" aria-modal="true" aria-labelledby="psSecretTitle" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="ps-secret-modal-content">
+      <button type="button" class="ps-secret-close" onclick="closePsSecretModal()" aria-label="Cerrar">✕</button>
+
+      <h2 class="ps-secret-title" id="psSecretTitle">Me das Paz ♥</h2>
+
+      <div class="ps-secret-grid">
+        <!-- Video -->
+        <div class="ps-secret-item ps-secret-video">
+          <video controls playsinline preload="none">
+            <source src="https://www.dropbox.com/scl/fi/nyqgl7nmqscwg80vpyq9s/Recuerdos.mp4?rlkey=e8p7moinpw7tqiw3gm1iitfkw&st=ijrc1j18&raw=1" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Foto -->
+        <div class="ps-secret-item ps-secret-photo">
+          <img src="https://i.ibb.co/CKV7hy84/recuerdos.jpg" alt="Nosotros" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio de fondo (solo zona P.S.) -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="https://www.dropbox.com/scl/fi/94oydc8me0h37zk0mhcmo/Ma-Belle-Evangeline-Release.mp3?rlkey=udi4kfkbsrsgxeqnunft5z1jz&st=1xftr632&raw=1" type="audio/mpeg">
+  </audio>
+
+
+  <!-- ======================= WHAT STAYED ======================= -->
+  <div id="stayed" class="view">
+
+    <button type="button" class="back-btn" onclick="goHome()">← Atrás</button>
+
+    <p class="stayed-intro">
+      Hay canciones que no suenan igual desde que existes.
+    </p>
+
+    <!-- TUS FAVORITAS -->
+    <section class="songs-section" aria-labelledby="favTitle">
+      <h3 class="section-title" id="favTitle">Tus favoritas</h3>
+
+      <div class="songs-grid">
+        <button type="button" class="song-card" onclick="openExplicale()" aria-haspopup="dialog" aria-controls="explicale-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/ynpbP5nV/Explicale.jpg" alt="Explícale - Yandel" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">Explicale</span>
+          <span class="song-card-artist">Yandel</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openBesameSinSentir()" aria-haspopup="dialog" aria-controls="besame-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/7JmrrDMB/Besame-sin-sentir.png" alt="Bésame sin sentir" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">Bésame sin sentir</span>
+          <span class="song-card-artist">Micro TDH</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openSancocho()" aria-haspopup="dialog" aria-controls="sancocho-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/vxYV9VKR/Sancocho-en-le-a.jpg" alt="Sancocho en Leña" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">Sancocho En Leña</span>
+          <span class="song-card-artist">Alcolirykoz</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- MIS DEDICATORIAS -->
+    <section class="songs-section" aria-labelledby="dedTitle">
+      <h3 class="section-title" id="dedTitle">Mis dedicatorias</h3>
+
+      <div class="songs-grid">
+        <button type="button" class="song-card" onclick="openMedia()" aria-haspopup="dialog" aria-controls="media-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/YBCWZ6Zb/Media-luna.jpg" alt="Media Luna - Mora" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">MEDIA LUNA</span>
+          <span class="song-card-artist">Mora</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openNoche()" aria-haspopup="dialog" aria-controls="noche-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/N26bQX3f/Una-noche.jpg" alt="Una noche - Alleh &amp; Yorghaki" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">Una noche</span>
+          <span class="song-card-artist">Alleh &amp; Yorghaki</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openFantasia()" aria-haspopup="dialog" aria-controls="fantasia-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/N6Py3VZT/fantasia.jpg" alt="FANTASÍA - ROA" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">FANTASÍA</span>
+          <span class="song-card-artist">ROA</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openCapi()" aria-haspopup="dialog" aria-controls="capi-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/spzpbNYP/LA-CAPI.png" alt="LA CAPI - Myke Towers" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">LA CAPI</span>
+          <span class="song-card-artist">Myke Towers</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openSobredosis()" aria-haspopup="dialog" aria-controls="sobredosis-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/Lzrz8mNJ/Sobredosis.jpg" alt="Sobredosis - Romeo Santos" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">SOBREDOSIS</span>
+          <span class="song-card-artist">Romeo Santos</span>
+        </button>
+
+        <button type="button" class="song-card" onclick="openHecha()" aria-haspopup="dialog" aria-controls="hecha-modal">
+          <span class="song-cover"><img src="https://i.ibb.co/chf1gy0R/Hecha-pa-mi.jpg" alt="Hecha Pa&#x27; Mi - Boza" loading="lazy" decoding="async" width="300" height="300"></span>
+          <span class="song-card-title">Hecha Pa&#x27; Mi</span>
+          <span class="song-card-artist">Boza</span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  </main>
+
+  <!-- ======================= REPRODUCTORES (MODALES) ======================= -->
+
+  <!-- ======================= MODAL EXPLÍCALE ======================= -->
+  <div id="explicale-modal" class="song-modal" role="dialog" aria-modal="true" aria-label="Explícale - Yandel" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeExplicale()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/ynpbP5nV/Explicale.jpg" alt="Explícale - Yandel" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">Explícale</div>
+          <div class="song-artist">Yandel</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span>3:47</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLine()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtn" onclick="togglePlay()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLine()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audio" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/y9evpf11hcxs9fvafj4ej/explicale.mp3?rlkey=vuvhd4sf0uct3ya8llq9uf1ax&st=ondrh0rp&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyrics" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL BÉSAME SIN SENTIR ======================= -->
+  <div id="besame-modal" class="song-modal" role="dialog" aria-modal="true" aria-label="Bésame sin sentir - Micro TDH" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeBesame()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/7JmrrDMB/Besame-sin-sentir.png" alt="Bésame sin sentir" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">Bésame sin sentir</div>
+          <div class="song-artist">Micro TDH</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressBesame" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeBesame">0:00</span>
+          <span>4:08</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineBesame()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnBesame" onclick="togglePlayBesame()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineBesame()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioBesame" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/c647328w6koko8vjhrlr4/b-same-sin-sentir.mp3?rlkey=9vsi2wty2qpd1y6me1tku357o&st=dtg2as5v&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsBesame" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL SANCOCHO EN LEÑA ======================= -->
+  <div id="sancocho-modal" class="song-modal" role="dialog" aria-modal="true" aria-label="Sancocho en Leña - Artista" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeSancocho()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/vxYV9VKR/Sancocho-en-le-a.jpg" alt="Sancocho en Leña" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">Sancocho en Leña</div>
+          <div class="song-artist">Artista</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressSancocho" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeSancocho">0:00</span>
+          <span>2:55</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineSancocho()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnSancocho" onclick="togglePlaySancocho()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineSancocho()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioSancocho" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/5m8we7aoi30s06g4b2fiw/Sancocho-en-le-a.mp3?rlkey=gj0in8vcqqmeyyfhtswhv9vgg&st=cgnapy3m&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsSancocho" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL MEDIA LUNA ======================= -->
+  <div id="media-modal" class="song-modal my-dedication" role="dialog" aria-modal="true" aria-label="MEDIA LUNA - Mora" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeMedia()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/YBCWZ6Zb/Media-luna.jpg" alt="Media Luna - Mora" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">MEDIA LUNA</div>
+          <div class="song-artist">Mora</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressMedia" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeMedia">0:00</span>
+          <span>2:15</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineMedia()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnMedia" onclick="togglePlayMedia()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineMedia()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioMedia" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/1jr6rnct3atbgirjyzk9q/MEDIA-LUNA.mp3?rlkey=hh8dkwdrmf04l49d5ev5wff5p&st=slp0f6ob&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsMedia" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL UNA NOCHE ======================= -->
+  <div id="noche-modal" class="song-modal my-dedication" role="dialog" aria-modal="true" aria-label="Una noche - Alleh &amp; Yorghaki" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeNoche()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/N26bQX3f/Una-noche.jpg" alt="Una noche - Alleh &amp; Yorghaki" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">Una noche</div>
+          <div class="song-artist">Alleh &amp; Yorghaki</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressNoche" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeNoche">0:00</span>
+          <span>2:59</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineNoche()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnNoche" onclick="togglePlayNoche()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineNoche()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioNoche" preload="metadata">
+          <source src="https://www.dropbox.com/scl/fi/osf8er31j58gb6kk26zq8/Alleh-Yorghaki.mp3?rlkey=ycgg810fuee3hxdy4rjo0ozce&st=wi48alet&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsNoche" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL FANTASÍA ======================= -->
+  <div id="fantasia-modal" class="song-modal" role="dialog" aria-modal="true" aria-label="FANTASÍA - ROA" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeFantasia()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/N6Py3VZT/fantasia.jpg" alt="FANTASÍA - ROA" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">FANTASÍA</div>
+          <div class="song-artist">ROA</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressFantasia" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeFantasia">0:00</span>
+          <span>2:40</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineFantasia()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnFantasia" onclick="togglePlayFantasia()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineFantasia()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioFantasia" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/qf3eik5trxn21vmz7mh5f/Fantasia.mp3?rlkey=0839awwisgvh5vuhsjqu43vrn&st=2o1fk1d4&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsFantasia" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL LA CAPI ======================= -->
+  <div id="capi-modal" class="song-modal my-dedication" role="dialog" aria-modal="true" aria-label="LA CAPI - Myke Towers" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeCapi()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/spzpbNYP/LA-CAPI.png" alt="LA CAPI - Myke Towers" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">LA CAPI</div>
+          <div class="song-artist">Myke Towers</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressCapi" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeCapi">0:00</span>
+          <span>3:12</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineCapi()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnCapi" onclick="togglePlayCapi()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineCapi()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioCapi" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/gu293p3rk9bh7wps5f5ce/LA-CAPI.mp3?rlkey=1lsoqn9wwqlunyua7h1ybqegg&st=9m2gmj86&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsCapi" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL SOBREDOSIS ======================= -->
+  <div id="sobredosis-modal" class="song-modal my-dedication" role="dialog" aria-modal="true" aria-label="SOBREDOSIS - Romeo Santos" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeSobredosis()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/Lzrz8mNJ/Sobredosis.jpg" alt="Sobredosis - Romeo Santos" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">SOBREDOSIS</div>
+          <div class="song-artist">Romeo Santos</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressSobredosis" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeSobredosis">0:00</span>
+          <span>3:16</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineSobredosis()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnSobredosis" onclick="togglePlaySobredosis()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineSobredosis()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioSobredosis" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/mmvf63vqe2csbl5bd92e3/Sobredosis.mp3?rlkey=ibt8qgirco15f81ei25g8t644&st=r5usw16u&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsSobredosis" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================= MODAL HECHA PA' MI ======================= -->
+  <div id="hecha-modal" class="song-modal my-dedication" role="dialog" aria-modal="true" aria-label="Hecha Pa&#x27; Mi - Boza" aria-hidden="true">
+    <div class="magic-aura" aria-hidden="true"><i class="aura-glow"></i><i class="aura-star"></i></div>
+    <div class="player-box">
+
+      <button type="button" class="close-modal" onclick="closeHecha()" aria-label="Cerrar">✕</button>
+
+      <!-- Candado: overlay, no envuelve contenido -->
+      <div class="lock-layer" role="button" tabindex="0" aria-label="Toca el candado para desbloquear">
+        <div class="lock-icon"></div>
+      </div>
+      <div class="particle-container" aria-hidden="true"></div>
+
+      <div class="player-left">
+        <div class="player-cover">
+          <img src="https://i.ibb.co/chf1gy0R/Hecha-pa-mi.jpg" alt="Hecha Pa&#x27; Mi - Boza" decoding="async" width="300" height="300">
+        </div>
+
+        <div class="song-info">
+          <div class="song-name">Hecha Pa&#x27; Mi</div>
+          <div class="song-artist">Boza</div>
+        </div>
+
+        <div class="progress-bar" role="progressbar" aria-label="Progreso de la canción">
+          <div id="progressHecha" class="progress"></div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTimeHecha">0:00</span>
+          <span>3:07</span>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="ctrl ctrl-prev" onclick="prevLineHecha()" aria-label="Retroceder 5 segundos">⏮</button>
+          <button type="button" class="ctrl ctrl-play" id="playBtnHecha" onclick="togglePlayHecha()" aria-label="Reproducir o pausar">▶</button>
+          <button type="button" class="ctrl ctrl-next" onclick="nextLineHecha()" aria-label="Adelantar 5 segundos">⏭</button>
+        </div>
+
+        <audio id="audioHecha" preload="none">
+          <source src="https://www.dropbox.com/scl/fi/fgscfto9gxycnmerhr04f/Boza-Hecha-Pa-Mi-LatinHype.mp3?rlkey=kw95rmbmy31wqsupu8fdl8zpd&st=m6pipvgo&raw=1" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="player-lyrics">
+        <div id="lyricsHecha" aria-live="off"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
